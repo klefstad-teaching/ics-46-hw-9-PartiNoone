@@ -13,6 +13,16 @@ void test_edit_dis(){
     cout << "saturday from sunday: " << d << endl;
 }
 
+void test_is_insertion(){
+    cout << is_one_insertion("abs", "acbs") << endl; // 1
+    cout << is_one_insertion("abs", "babs") << endl; // 1
+    cout << is_one_insertion("ack", "arks") << endl; // 0
+    cout << is_one_insertion("ack", "arsk") << endl; // 0
+    cout << is_one_insertion("ack", "acrs") << endl; // 0
+    cout << is_one_insertion("ark", "abks") << endl; // 0
+    cout << is_one_insertion("arf", "args") << endl; // 0
+}
+
 void verify_wladder() {
     set<string> word_list;
     load_words(word_list, "src/words.txt");
