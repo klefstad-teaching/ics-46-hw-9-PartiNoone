@@ -53,6 +53,12 @@ bool edit_distance_is(const string& str1, const string& str2, int d){
     return distance == d;
 }
 
+bool edit_distance_within(const string& str1, const string& str2, int d){
+    // returns true if edit distance is within d
+    int distance = edit_distance(str1, str2);
+    return distance <= d;
+}
+
 bool is_one_insertion(const string& small, const string& big){
     int i = 0;
     int j = 0;
