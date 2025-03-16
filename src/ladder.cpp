@@ -144,12 +144,17 @@ void load_words(set<string> & word_list, const string& file_name){
 }
 
 void print_word_ladder(const vector<string>& ladder){
-    int s = ladder.size() - 1;
-    cout << "Word ladder found: ";
-    for (int i = 0; i < s; ++i){
-        cout << ladder[i] << " ";
+    int s = ladder.size();
+    if (s == 0){
+        cout << "No word ladder found." << endl;
+        return;
+    } else {
+        cout << "Word ladder found: ";
+        for (int i = 0; i < s; ++i){
+            cout << ladder[i] << " ";
+        }
+        cout << endl;
     }
-    cout << ladder[s] << endl;
 }
 
 #define my_assert(e) {cout << #e << ((e) ? " passed": " failed") << endl;}
