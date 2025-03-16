@@ -44,6 +44,15 @@ void verify_wladder() {
 
 int main() {
     // test_edit_dis();
-    cout << "is adjacent apple apple: " << is_adjacent("apple", "apple");
-    verify_wladder();
+    // cout << "is adjacent apple apple: " << is_adjacent("apple", "apple");
+    // verify_wladder();
+    set<string> word_list;
+    load_words(word_list, "src/words.txt");
+
+    vector<string> ladder1 = generate_word_ladder("cat", "cat", word_list);
+    cout << "size: " << ladder1.size() << endl;
+    ladder1.clear();
+    ladder1 = generate_word_ladder("cat", "dog", word_list);
+    print_word_ladder(ladder1);
+    cout << "size: " << ladder1.size() << endl;
 }
