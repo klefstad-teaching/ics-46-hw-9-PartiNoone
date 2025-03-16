@@ -44,5 +44,6 @@ void verify_wladder() {
 
 int main() {
     // test_edit_dis();
+    cout << "is adjacent apple apple: " << is_adjacent("apple", "apple");
     verify_wladder();
 }
