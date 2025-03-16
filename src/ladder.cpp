@@ -47,13 +47,41 @@ int edit_distance(string s, string t){
     return result;
 }
 
-bool edit_distance_is(const std::string& str1, const std::string& str2, int d){
+bool edit_distance_is(const string& str1, const string& str2, int d){
     // returns true if edit distance is within d
     int distance = edit_distance(str1, str2);
     return distance == d;
 }
 
+bool is_one_insertion(const string& small, const string& big){
+    int i = 0;
+    int j = 0;
+    int count = 0;
+    int lim1 = small.size();
+    int lim2 = big.size();
+    while (i < lim1 && j < lim2){
+        if (small[i] != big[j]){
+            ++j;
+            ++count;
+            if (count > 1) return false;
+        } else {
+            ++i;
+            ++j; 
+        }
+    }
+    return true;
+}
+
 bool is_adjacent(const string& word1, const string& word2){
+    // might need to change this to be faster
+    int size1 = word1.size();
+    int size2 = word2.size();
+    int size_diff = abs(size1 - size2);
+    if (size_diff > 1){
+        return false;
+    } else if (size_diff == 1) {
+        return size1 > size2 ? is_one_insertion(word2, word1): is_one_insertion(word1, word2);
+    } // maybe add a is_one_substitution() func here and get rid of edit_distance altogether
     return edit_distance_is(word1, word2, 1);
 }
 

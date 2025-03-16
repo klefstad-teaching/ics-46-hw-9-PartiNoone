@@ -23,7 +23,7 @@ void verify_wladder() {
     my_assert(ladder1.size() == 4);
 
     vector<string> ladder2 = generate_word_ladder("marty", "curls", word_list);
-    print_word_ladder(ladder1);
+    print_word_ladder(ladder2);
     my_assert(ladder2.size() == 6);
 
     my_assert(generate_word_ladder("code", "data", word_list).size() == 6);
