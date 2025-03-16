@@ -145,8 +145,9 @@ void load_words(set<string> & word_list, const string& file_name){
 
 void print_word_ladder(const vector<string>& ladder){
     int s = ladder.size() - 1;
+    cout << "Word ladder found: ";
     for (int i = 0; i < s; ++i){
-        cout << ladder[i] << " -> ";
+        cout << ladder[i] << " ";
     }
     cout << ladder[s] << endl;
 }
